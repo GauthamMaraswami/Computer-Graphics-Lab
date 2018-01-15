@@ -1,0 +1,66 @@
+#include <GL/glut.h>
+#include<GL/gl.h>
+#include<GL/glu.h>
+//Drawing funciton
+void draw(void)
+{
+  
+  //Draw order
+  glBegin(GL_LINE_STRIP);
+   glColor3f(1,1,1);
+  glVertex2f(35,35);
+ glColor3f(1,1,1);
+  glVertex2f(35,10);
+  glColor3f(1,1,1);
+  glVertex2f(10,10);
+  glColor3f(1,1,1);
+  glVertex2f(10,35);//if array glVertex2fv(array)
+  glEnd();
+
+  glBegin(GL_LINE_LOOP);
+  glColor3f(1,1,1);
+  glVertex2f(35,35);
+
+  glColor3f(1,1,1);
+  glVertex2f(10,35);
+
+  glColor3f(1,1,1);
+  glVertex2f(23,55);
+  
+  glEnd();
+  glBegin(GL_LINE_STRIP);
+  glColor3f(1,1,1);
+  glVertex2f(18,10);
+  glColor3f(1,1,1);
+  glVertex2f(18,20);
+glColor3f(1,1,1);
+  glVertex2f(25,20);
+glColor3f(1,1,1);
+  glVertex2f(25,10);
+  glEnd();
+  glFlush();
+}
+void Init(){
+  //Background color(r,g,b,a) a is for transparancy
+  glClearColor(0,0,0,1);
+  glClear(GL_COLOR_BUFFER_BIT );
+
+  glMatrixMode(GL_PROJECTION);//used for next function
+  gluOrtho2D(0,100,0,100);//gluOrthod xmin xmax,ymin ymax
+}
+
+//Main program
+int main(int argc, char **argv)
+{
+  glutInit(&argc, argv);
+  //Simple buffer
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
+  glutInitWindowPosition(400,200);
+  glutInitWindowSize(1000,1000);
+  glutCreateWindow("My First Computer Graphics Program!");
+  //Call to the drawing function
+  Init();
+  glutDisplayFunc(draw);
+  glutMainLoop();
+  return 0;
+}
