@@ -25,7 +25,7 @@ void drawtriangle()
     glVertex2f(225.0,300);
      glVertex2fv(v[1]);
  glVertex2f(225.0,50);
-
+  glVertex2fv(v[2]);
     glEnd();
     glFlush();
 }
