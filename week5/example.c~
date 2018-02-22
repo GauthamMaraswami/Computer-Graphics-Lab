@@ -47,8 +47,8 @@ int main()
  
    initgraph(&gd, &gm, "C:\\TC\\BGI");
  
-  drawline(20,20,500,500);
-//bresengham(20,20,500,500);
+ // drawline(20,20,500,500);
+bresengham(20,20,500,500);
 int d;
  scanf("%d",&d);
    getch();
